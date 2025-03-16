@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 시 새로운 항목 추가</title>
+</head>
+<body>
+    <button id="addItemButton">항목 추가</button>
+    
+    <ul id="itemList">
+        
+    </ul>
+
+<script>
+    let count = 1;
+    
+    document.getElementById('addItemButton').addEventListener("click", function(){
+        
+        let newItem = document.createElement('li');
+        newItem.textContent = '새로운 항목' + count++;
+
+        document.getElementById('itemList').appendChild(newItem);
+
+    });
+</script>
+
+</body>
+</html>

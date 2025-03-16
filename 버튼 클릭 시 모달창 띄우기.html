@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창 열고 닫기</title>
+    <link rel="stylesheet" href="modalclick.css">
+</head>
+<body>
+
+    <button id="openMD">모달 열기</button>
+    <div id="modal" class="modal"> <!-- 모달 배경 -->
+        <div class="modal-content"> <!-- 모달 창 -->
+            <p>모달 창입니다.</p>
+            <button id="closeMD" class="close-btn">닫기</button>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.querySelector("#modal");
+        const openBtn = document.querySelector("#openMD");
+        const closeBtn = document.querySelector("#closeMD");
+
+        openBtn.addEventListener("click", function(){
+            modal.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", function(){
+            modal.classList.remove("active");
+        });
+
+        modal.addEventListener("click", function(event){
+            if(event.target === modal){
+                modal.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
