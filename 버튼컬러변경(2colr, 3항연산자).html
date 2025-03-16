@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="title">Click me!</h1>
+	<button id="ChangeColorBtn">눌러보시오</button><br>
+	<br><p id="textParagraph">Click me 22</p>
+	<button id="ChangeTextBtn">어떻게 바뀔까</button>
+	
+	<script>
+		const title = document.querySelector("#title");
+		const button1 = document.querySelector("#ChangeColorBtn");
+		const ptext = document.querySelector("#textParagraph");
+		const button2 = document.querySelector("#ChangeTextBtn");
+
+		const originalText = ptext.innerText;
+		
+		button1.addEventListener("click", function(){
+			title.style.color = title.style.color === "red" ? "blue" : "red";
+		});
+
+		button2.addEventListener("click", function(){
+			if(ptext.innerText === originalText){
+				ptext.innerText = "javaScript Dom 조작 성공!"
+			} else {
+				ptext.innerText = originalText
+			}
+		});
+	</script>
+
+</body>
+</html>

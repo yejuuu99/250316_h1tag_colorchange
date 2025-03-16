@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="title">Click me!</h1>
+	<button id="ChangeColorBtn">눌러보시오</button>
+	
+	<script>
+		const title = document.querySelector("#title");
+		const button = document.querySelector("#ChangeColorBtn");
+
+		const colors = ["initial", "red", "blue"]
+		let currentColorIndex = 0;
+
+        button.addEventListener("click", function(){
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            title.style.color = colors[currentColorIndex];
+        })
+	</script>
+
+</body>
+</html>
